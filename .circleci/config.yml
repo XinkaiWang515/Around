@@ -1,4 +1,4 @@
-version: 1
+version: 2
 jobs:
   build:
     docker:
@@ -9,5 +9,5 @@ jobs:
       - setup_remote_docker
       - run: |
           docker build -t stevendoit/around .
-          docker login -u="$stevendoit" -p="$Wxk950515$"
+          docker login -u="$DOCKERHUB_USERNAME" -p="$DOCKERHUB_PASSWORD"
           docker push stevendoit/around
