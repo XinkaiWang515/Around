@@ -1,0 +1,13 @@
+version: 1
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.9
+    working_directory: /go/src/github.com/Xinkai/Around
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: |
+          docker build -t stevendoit/around .
+          docker login -u="$stevendoit" -p="$Wxk950515$"
+          docker push stevendoit/around
